@@ -10,6 +10,11 @@ import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import javax.ejb.Stateless;
+import javax.persistence.GeneratedValue;
+import javax.persistence.SequenceGenerator;
+
+@Stateless
 @RunWith(Arquillian.class)
 public class JPATest {
 
@@ -19,7 +24,7 @@ public class JPATest {
     @Deployment
     public static JavaArchive criarArquivoTeste() {
         return ShrinkWrap.create(JavaArchive.class)
-                .addPackage(Artigo.class.getPackage())
+                .addPackage(ArtigoDAO.class.getPackage())
                 .addPackage(Artigo.class.getPackage())
                 .addAsResource("META-INF/persistence.xml");
     }

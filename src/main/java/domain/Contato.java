@@ -17,4 +17,11 @@ public class Contato implements Serializable {
     public Contato() {
 
     }
+
+    public Contato(long id, String telefoneResidencial, String telefoneComercial, String telefoneCelular) {
+        this.id = id;
+        this.telefoneResidencial = telefoneResidencial;
+        this.telefoneComercial = telefoneComercial;
+        this.telefoneCelular = telefoneCelular;
+    }
 }
