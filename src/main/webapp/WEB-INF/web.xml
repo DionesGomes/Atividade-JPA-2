@@ -32,8 +32,8 @@
     <name>jdbc/DACDataSource</name>
     <class-name>org.postgresql.ds.PGSimpleDataSource</class-name>
     <server-name>localhost</server-name>
-    <port-number>5432</port-number>
-    <database-name>congresso</database-name>
+    <port-number>5433</port-number>
+    <database-name>congreso</database-name>
     <user>postgres</user>
     <password>123</password>
     <property>
