@@ -11,6 +11,6 @@
                           datasource-classname="org.postgresql.ds.PGSimpleDataSource">
         <property name="user" value="postgres"/>
         <property name="password" value="123"/>
-        <property name="url" value="jdbc:postgresql://localhost:5432/congresso"/>
+        <property name="url" value="jdbc:postgresql://localhost:5433/congresso"/>
     </jdbc-connection-pool>
 </resources>
