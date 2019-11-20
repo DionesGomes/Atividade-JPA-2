@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity
 @Table(name = "INSCRICOES")
 @Data
-@SequenceGenerator(name = "ISC_SEQ", sequenceName = "inscricoes_id_seq")
+@SequenceGenerator(name = "ISC_SEQ", sequenceName = "inscricoes_id_seq", initialValue = 1, allocationSize = 1)
 public class Inscricao implements Serializable {
 
     public enum TipoEvento {CONGRESSO, SIMPOSIO};
@@ -26,15 +26,19 @@ public class Inscricao implements Serializable {
     private TipoEvento tipoEvento;
     private String tipoParticipacao;
 
+    @OneToOne
+    private Participante participante;
+
     public Inscricao() {
 
     }
 
-    public Inscricao(String status, Date dataInscricao, Double preco, TipoEvento tipoEvento, String tipoParticipacao) {
-        this.status = status;
+    public Inscricao(Date dataInscricao, Double preco, TipoEvento tipoEvento, String tipoParticipacao,
+                     Participante participante) {
         this.dataInscricao = dataInscricao;
         this.preco = preco;
         this.tipoEvento = tipoEvento;
         this.tipoParticipacao = tipoParticipacao;
+        this.participante = participante;
     }
 }

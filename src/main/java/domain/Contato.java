@@ -9,7 +9,6 @@ import java.io.Serializable;
 @Data
 public class Contato implements Serializable {
 
-    private long id;
     private String telefoneResidencial;
     private String telefoneComercial;
     private String telefoneCelular;
@@ -18,8 +17,7 @@ public class Contato implements Serializable {
 
     }
 
-    public Contato(long id, String telefoneResidencial, String telefoneComercial, String telefoneCelular) {
-        this.id = id;
+    public Contato(String telefoneResidencial, String telefoneComercial, String telefoneCelular) {
         this.telefoneResidencial = telefoneResidencial;
         this.telefoneComercial = telefoneComercial;
         this.telefoneCelular = telefoneCelular;

@@ -8,7 +8,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "ARTIGOS")
 @Data
-@SequenceGenerator(name = "ART_SEQ", sequenceName = "artigo_id_seq")
+@SequenceGenerator(name = "ART_SEQ", sequenceName = "artigo_id_seq", initialValue = 1, allocationSize = 1)
 public class Artigo implements Serializable {
 
     @Id
@@ -21,18 +21,21 @@ public class Artigo implements Serializable {
     private String data_submissao;
     private String urlDownload;
 
+    @OneToOne
+    private Participante participante;
+
     public Artigo() {
 
     }
 
-    public Artigo(String titulo, String orientador, String coautores, String modalidade, String dataSubmissao,
-                  String urlDownload) {
+    public Artigo(String titulo, String orientador, String coautores, String modalidade, String data_submissao,
+                  String urlDownload, Participante participante) {
         this.titulo = titulo;
         this.orientador = orientador;
         this.coautores = coautores;
         this.modalidade = modalidade;
-        this.data_submissao = dataSubmissao;
+        this.data_submissao = data_submissao;
         this.urlDownload = urlDownload;
+        this.participante = participante;
     }
-
 }
